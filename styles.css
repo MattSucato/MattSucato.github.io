@@ -6,3 +6,35 @@ h1 {
     color: purple;
     text-align: center;
 }   
+
+/* Make the gallery display images in a row */
+.project-gallery {
+  display: flex;
+  justify-content: center;  /* centers the row horizontally */
+  align-items: flex-start;
+  gap: 20px;                /* space between images */
+  flex-wrap: wrap;          /* allows wrapping on smaller screens */
+  margin-top: 20px;
+}
+
+/* Each project section */
+.project {
+  text-align: center;
+  width: 30%;               /* fits 3 in a row */
+}
+
+/* Make images smaller and consistent */
+.project img {
+  width: 100%;              /* fill their container */
+  max-width: 250px;         /* prevents them from being too big */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+/* Small hover effect */
+.project img:hover {
+  transform: scale(1.05);
+}
+
