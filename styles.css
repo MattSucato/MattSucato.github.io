@@ -1,35 +1,50 @@
 body {
-    background: aquamarine;
-    font-family: Arial, Helvetica, sans-serif;
+  background: aquamarine;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 h1 {
-    color: purple;
-    text-align: center;
-}   
+  color: purple;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  color: #222;
+}
 
 /* Make the gallery display images in a row */
 .project-gallery {
   display: flex;
-  justify-content: center;  /* centers the row horizontally */
+  justify-content: space-around;  /* spread images evenly */
   align-items: flex-start;
-  gap: 20px;                /* space between images */
-  flex-wrap: wrap;          /* allows wrapping on smaller screens */
-  margin-top: 20px;
+  gap: 15px;                      /* spacing between images */
+  flex-wrap: nowrap;              /* keeps them in one row */
+  margin: 20px auto;
+  max-width: 1000px;              /* keeps layout centered */
 }
 
-/* Each project section */
+/* Each project container */
 .project {
+  flex: 1;                        /* evenly share space */
   text-align: center;
-  width: 30%;               /* fits 3 in a row */
+  max-width: 300px;               /* limit each project’s width */
 }
 
 /* Make images smaller and consistent */
 .project img {
-  width: 100%;              /* fill their container */
-  max-width: 250px;         /* prevents them from being too big */
+  width: 100%;
+  max-width: 250px;               /* prevents huge images */
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
 }
 
@@ -38,3 +53,20 @@ h1 {
   transform: scale(1.05);
 }
 
+/* Responsive behavior for smaller screens */
+@media (max-width: 900px) {
+  .project-gallery {
+    flex-wrap: wrap;             /* allow wrapping when small */
+    justify-content: center;
+  }
+
+  .project {
+    width: 45%;                  /* two per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    width: 90%;                  /* one per row on phones */
+  }
+}
