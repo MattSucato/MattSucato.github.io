@@ -1,73 +1,145 @@
-body {
-  background: aquamarine;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
+/* ---------- Base page layout ---------- */
+:root{
+  --max-width: 820px;
+  --muted: #666;
+  --accent: #0a58ca;
+  --bg: #ffffff;
 }
 
-h1 {
-  color: purple;
-  text-align: center;
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #f8f8f8; color: #111; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 36px auto;
+  padding: 0 18px;
 }
 
-h2 {
-  text-align: center;
-  color: #333;
+/* Header */
+.site-header h1 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111;
 }
 
-p {
-  text-align: center;
+/* Simple section headings like the example site */
+section { margin-bottom: 26px; }
+section h2 {
+  margin: 6px 0 10px;
+  font-size: 18px;
   color: #222;
+  font-weight: 700;
+  border-bottom: none;
 }
 
-/* Make the gallery display images in a row */
-.project-gallery {
+/* paragraphs */
+p { margin: 0 0 10px; color: #222; line-height: 1.45; }
+
+/* ---------- Resume block (under Skills) ---------- */
+.resume-block {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 14px 16px;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+
+/* header row: name + contact */
+.resume-header {
   display: flex;
-  justify-content: space-around;  /* spread images evenly */
-  align-items: flex-start;
-  gap: 15px;                      /* spacing between images */
-  flex-wrap: nowrap;              /* keeps them in one row */
-  margin: 20px auto;
-  max-width: 1000px;              /* keeps layout centered */
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.resume-header .name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+.resume-header .contact { font-size: 13px; color: var(--muted); }
+
+/* small pdf/html links row */
+.resume-links {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.resume-links a { color: var(--accent); }
+
+/* resume article */
+.resume { margin-top: 12px; color: #222; }
+
+/* grid: two columns on desktop, stacked on mobile */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 8px;
+}
+.col { min-width: 0; }
+
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111;
+  margin: 10px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-/* Each project container */
+.section-item { margin-bottom: 12px; font-size: 14px; }
+.section-item strong { display:block; font-weight:700; margin-bottom:4px; }
+.item-meta { font-size: 12px; color: var(--muted); margin-bottom:6px; }
+.item-desc { margin: 0; color: #333; }
+
+/* lists */
+.skills-list, .vol-list { margin: 6px 0 12px 18px; color: #333; }
+.skills-list li, .vol-list li { margin-bottom: 6px; font-size: 14px; }
+
+/* small footer note inside resume */
+.resume-footer { margin-top: 8px; font-size: 13px; color: var(--muted); }
+
+/* ---------- Projects gallery (keeps your previous styling but simplified) ---------- */
+.project-gallery {
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  margin-top:8px;
+}
 .project {
-  flex: 1;                        /* evenly share space */
-  text-align: center;
-  max-width: 300px;               /* limit each project’s width */
+  width: 240px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 8px;
+  border-radius: 4px;
 }
-
-/* Make images smaller and consistent */
 .project img {
   width: 100%;
-  max-width: 250px;               /* prevents huge images */
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  display:block;
+  border-radius: 4px;
 }
+.project p { margin: 8px 0 0; font-size: 13px; color: #333; }
 
-/* Small hover effect */
-.project img:hover {
-  transform: scale(1.05);
+/* contact section */
+.contact p { font-size: 14px; color: #222; }
+
+/* footer */
+.site-footer { text-align:center; color: var(--muted); font-size: 13px; margin-top: 14px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 820px) {
+  .container { margin: 20px auto; padding: 0 14px; }
+  .resume-grid { grid-template-columns: 1fr; }
+  .project { width: 48%; }
 }
-
-/* Responsive behavior for smaller screens */
-@media (max-width: 900px) {
-  .project-gallery {
-    flex-wrap: wrap;             /* allow wrapping when small */
-    justify-content: center;
-  }
-
-  .project {
-    width: 45%;                  /* two per row on tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .project {
-    width: 90%;                  /* one per row on phones */
-  }
+@media (max-width: 480px) {
+  .project { width: 100%; }
+  .resume-header { flex-direction: column; align-items: flex-start; gap:6px; }
+  .resume-links { font-size: 12px; }
 }
 

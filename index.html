@@ -1,65 +1,159 @@
 <!DOCTYPE html>
-<html>
 <head>
+  <meta charset="utf-8" />
   <title>CSCE 190: Matt Sucato</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <!-- ===== Resume section (embedded PDF) ===== -->
-<section id="resume" class="resume-section">
-  <h2>Resume</h2>
-  <h1>Matt Sucato</h1>
-  <p>This page is for CSCE 190</p>
+  <main class="container">
+    <header class="site-header">
+      <h1>Matt Sucato</h1>
+    </header>
 
-  <div class="about">
-    <h2>About me</h2>
-    <p>
-      My mission at the University of South Carolina is to do my best in every part of college.
-      I want to work hard in my classes, get involved on campus, meet new people, and grow as a person.
-      I will stay focused on my goals, ask for help when I need it, and take advantage of the opportunities here.
-      I want to leave USC proud of what I accomplished and ready for what comes next!
-    </p>
-  </div>
+    <section class="about">
+      <h2>About me</h2>
+      <p>
+        My mission at the University of South Carolina is to do my best in every part of college.
+        I want to work hard in my classes, get involved on campus, meet new people, and grow as a person.
+        I will stay focused on my goals, ask for help when I need it, and take advantage of the opportunities here.
+        I want to leave USC proud of what I accomplished and ready for what comes next!
+      </p>
+    </section>
 
-  <div class="skills">
-    <h2>Skills</h2>
-  </div>
+    <section class="skills">
+      <h2>Skills</h2>
 
-  <div class="projects">
-    <h2>Highlighted Projects</h2>
+      <!-- Resume HTML included directly under Skills -->
+      <div class="resume-block">
 
-    <div class="project-gallery">
-      <div class="project">
-        <a href="Files/Screenshot 2025-10-13 122202.png">
-          <img src="Files/Screenshot 2025-10-13 122202.png" alt="Problem Statement Screenshot">
-        </a>
-        <p>Dining Hall problem statement.</p>
+        <!-- Top row: name + contact -->
+        <div class="resume-header">
+          <h3 class="name">Matthew Sucato</h3>
+          <div class="contact">
+            <div>📞 (202) 878-0728</div>
+            <div>✉️ <a href="mailto:matthewsucato11@gmail.com">matthewsucato11@gmail.com</a></div>
+          </div>
+        </div>
+
+        <!-- PDF link -->
+        <div class="resume-links">
+          <a class="pdf-link" href="Files/Resume (3).pdf" target="_blank" rel="noopener noreferrer">Open PDF version</a>
+          <span class="divider">|</span>
+          <a class="html-link" href="#resume-html">View HTML resume on this page</a>
+        </div>
+
+        <!-- HTML resume content (semantic) -->
+        <article id="resume-html" class="resume">
+          <header class="resume-intro">
+            <p class="role">Computer Science Major — University of South Carolina</p>
+            <p class="location">Columbia, SC</p>
+          </header>
+
+          <div class="resume-grid">
+            <div class="col left-col">
+              <h4 class="section-title">Experience</h4>
+
+              <div class="section-item">
+                <strong>Phi Gamma Delta — Committee Head / Marketing Chair</strong>
+                <div class="item-meta">Oct 2025 – Present</div>
+                <p class="item-desc">Managing a committee of 26 people by directing event promotions, branding strategies, social media outreach and digital campaigns that strengthened fraternity presence and recruitment on campus.</p>
+              </div>
+
+              <div class="section-item">
+                <strong>SucatoStudios — Owner / Founder</strong>
+                <div class="item-meta">June 2022 – Present</div>
+                <p class="item-desc">Founded and operate a graphic design business specializing in commitment announcement graphics for student-athletes, managing creative design and client relations.</p>
+              </div>
+
+              <div class="section-item">
+                <strong>Bethesda Lacrosse Club — Assistant Coach</strong>
+                <div class="item-meta">June 2023 – Aug 2024</div>
+                <p class="item-desc">Coached and mentored youth players, developing skills, teamwork, and sportsmanship.</p>
+              </div>
+            </div>
+
+            <div class="col right-col">
+              <h4 class="section-title">Education</h4>
+
+              <div class="section-item">
+                <strong>University of South Carolina</strong>
+                <div class="item-meta">Sep 2025 – May 2029</div>
+                <p class="item-desc">Molinaroli College of Engineering and Computing — Computer Science</p>
+              </div>
+
+              <div class="section-item">
+                <strong>Gonzaga College High School</strong>
+                <div class="item-meta">Aug 2021 – May 2025</div>
+                <p class="item-desc">High school diploma</p>
+              </div>
+
+              <h4 class="section-title">Skills & Languages</h4>
+              <ul class="skills-list">
+                <li>Java, Python, HTML/CSS</li>
+                <li>Photoshop (5+ years)</li>
+                <li>Leadership, Communication, Time management</li>
+                <li>Creativity, Organization</li>
+              </ul>
+            </div>
+          </div> <!-- /.resume-grid -->
+
+          <h4 class="section-title">Volunteering</h4>
+          <ul class="vol-list">
+            <li>Father McKenna Center — Food Server (2021–2025)</li>
+            <li>Best Buddies International — Volunteer (2025)</li>
+            <li>Wreaths Across America — Volunteer (2024)</li>
+            <li>Little Friends for Peace — Volunteer (2024)</li>
+            <li>SOME (So Others May Eat) — Volunteer (2022)</li>
+          </ul>
+
+          <footer class="resume-footer">
+            <em>Phi Gamma Delta — Active Member</em>
+          </footer>
+        </article>
+        <!-- end resume -->
+
       </div>
+      <!-- end resume-block -->
 
-      <div class="project">
-        <a href="Files/Screen Shot 2025-11-17 at 12.29.26 PM.png">
-          <img src="Files/Screen Shot 2025-11-17 at 12.29.26 PM.png" alt="Second Screenshot" class="medium-img"> 
+    </section>
 
+    <section class="projects">
+      <h2>Highlighted projects</h2>
 
-        </a>
-        <p>Affinity Diagram.</p>
+      <div class="project-gallery">
+        <div class="project">
+          <a href="Files/Screenshot 2025-10-13 122202.png">
+            <img src="Files/Screenshot 2025-10-13 122202.png" alt="Dining Hall problem statement">
+          </a>
+          <p>Dining Hall problem statement.</p>
+        </div>
+
+        <div class="project">
+          <a href="Files/Screen Shot 2025-11-17 at 12.29.26 PM.png">
+            <img src="Files/Screen Shot 2025-11-17 at 12.29.26 PM.png" alt="Affinity diagram">
+          </a>
+          <p>Affinity Diagram.</p>
+        </div>
+
+        <div class="project">
+          <a href="Files/Screen Shot 2025-11-18 at 6.23.36 PM.png">
+            <img src="Files/Screen Shot 2025-11-18 at 6.23.36 PM.png" alt="Design sketches">
+          </a>
+          <p>Sketches of the design concept.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="project">
-        <a href="Files/Screen Shot 2025-11-18 at 6.23.36 PM.png">
-           <img src="Files/Screen Shot 2025-11-18 at 6.23.36 PM.png" alt="Screenshot 6.23.36 PM">
-        </a>
-        <p>Sketches of the design concept.</p>
-      </div>
-    </div>
-  </div>
+    <section class="contact">
+      <h2>Contact me</h2>
+      <p>Phone: (202) 878-0728<br>Email: <a href="mailto:msucato@email.sc.edu">msucato@email.sc.edu</a></p>
+    </section>
 
-  <div class="contact">
-    <h2>Contact me!</h2>
-    <p>202-878-0728<br>msucato@email.sc.edu</p>
-  </div>
+    <footer class="site-footer">
+      <p>© Matt Sucato</p>
+    </footer>
+  </main>
 </body>
 </html>
-
-
-
