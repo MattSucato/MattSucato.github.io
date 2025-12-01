@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+
+public class ProcteredLab01 {
+	public static int[] determinePrice(int[] ages) {
+		int[] prices = new int[ages.length];
+		for (int i = 0; i < ages.length; i++) { //loop goes through each persons age 
+			int age = ages[i];
+			if (age < 13) {
+				prices[i] = 8;} //set to $8
+			else if (age >= 65){ 
+				prices[i] = 10; //$10
+			}
+			else { 
+				prices[i] = 12; //12
+			} 
+
+		}
+		return prices; 
+	}
+
+	public static void printDailyRevenue(int[] prices) {
+		int totalTickets = prices.length; //counting tickets 
+		int totalRevenue = 0; // initial value, will be added onto
+		for (int price : prices) { //loop thats adding on to totalRevenue 
+			totalRevenue += price;
+		}
+		
+		System.out.println();
+		System.out.println("Total Tickets Sold: " + totalTickets);
+		System.out.println("Total Revenue: $" + totalRevenue);
+		}
+	public static void main(String[] args) { 
+		Scanner scanner = new Scanner(System.in) ; //asking for ages of customers
+		int[] ages = new int[8]; //sets how many customers are getting tickets (8)
+		System.out.println("Please enter 8 ages (one per line):");
+		for (int i = 0; i < ages.length; i++) {
+			System.out.print("Age " + (i + 1) + ": "); 
+			ages[i] = scanner.nextInt();
+		}
+				int[] prices = determinePrice(ages);  
+				printDailyRevenue(prices);
+			
+
+			
+			
+		
+			
+		}
+	}
+
+
+
+
+
+		
